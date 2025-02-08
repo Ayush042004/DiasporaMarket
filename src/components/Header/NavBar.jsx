@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Search, ShoppingCart, Heart, User, ChevronDown, Menu, X } from 'lucide-react';
 import { NavLink, Link } from 'react-router-dom';
+import logo from "../../assets/logo.svg"
+import Herosection from "../../assets/Hero section.png"
 
 const categories = [
   {
@@ -49,16 +51,20 @@ function NavBar() {
       </div>
 
       {/* Main Navbar */}
-      <nav className="bg-white shadow-md">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between h-16">
-            {/* Logo */}
-            <div className="text-2xl font-bold text-orange-600 ">
+      <nav className=" shadow-md">
+        <div className="container mx-auto ">
+          <div className="flex items-center justify-start h-16">
+            <img
+            src={logo}
+            alt="logo"
+            className='h-16'>
+            </img>
+            <div className=" whitespace-nowrap text-2xl font-bold text-orange-600  mr-auto">
               <Link to="/">Diaspora Market</Link>
             </div>
 
             {/* Desktop Menu */}
-            <div className="hidden md:flex items-center space-x-8 flex-grow ml-8">
+            <div className="hidden md:flex items-center space-x-8  ml-12">
               {/* Categories Dropdown */}
               <div className="relative group">
                 <button
@@ -127,8 +133,8 @@ function NavBar() {
             </div>
 
             {/* Search Bar */}
-            <div className="hidden md:flex items-center flex-grow mx-8">
-              <div className="relative w-full">
+            <div className="hidden md:flex items-center flex-grow mx-4">
+              <div className="relative w-full max-w-lg">
                 <input
                   type="text"
                   placeholder="Search for products..."
@@ -236,6 +242,36 @@ function NavBar() {
           </div>
         )}
       </nav>
+      
+
+     {/* Hero section */}
+     <div className='bg-gradient-to-r from-orange-50 to-orange-100 overflow-hidden min-h-screen flex items-center'>
+      <div className='container mx-auto px-6 py-16 lg:px-16 md:py-24'>
+        <div className='grid md:grid-cols-2 gap-12 items-center'>
+          <div className='space-y-6 text-center md:text-left'>
+        <h1 className='text-4xl md:text-6xl poppins-bold text-orange-800 leading-tight'>
+          Traditional Indian <br /> Handicrafts & ethnics
+        </h1>
+        <p className='text-lg text-gray-600 max-w-md mx-auto'>
+          Discover the rich heritage of India through our curated collection of Handcrafted treasures,Traditional artwork and Ethnic design.
+        </p>
+        <button className='bg-orange-600 text-white px-8 py-3 rounded-full hover:bg-orange-700 transition-colors text-lg font-semibold shadow-lg'> Explore Collection</button>
+        </div>
+        <div className='flex justify-center'>
+          <img
+          src={Herosection}
+          alt="Handicrafts Display"
+          className='w-full rounded-lg  object-cover'>
+          
+          </img>
+          
+        </div>
+
+       </div>
+
+      </div>
+     </div>
+
     </div>
   );
 }
