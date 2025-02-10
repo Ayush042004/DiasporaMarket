@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Search, ShoppingCart, Heart, User, ChevronDown, Menu, X } from 'lucide-react';
 import { NavLink, Link } from 'react-router-dom';
-import logo from "../../assets/logo.svg"
-import Herosection from "../../assets/Hero section.png"
+import logo from "../assets/logo.svg"
+
 
 const categories = [
   {
@@ -25,7 +25,7 @@ function NavBar() {
   const [isCategoryOpen, setIsCategoryOpen] = useState(false);
 
   return (
-    <div className="min-h-screen">
+    <div className="">
       {/* Top Bar */}
       <div className="flex items-center py-1 bg-orange-600">
         <p className="text-[14px] text-white poppins-extralight pl-5">
@@ -51,7 +51,7 @@ function NavBar() {
       </div>
 
       {/* Main Navbar */}
-      <nav className=" shadow-md">
+      <nav className="  relative shadow-md">
         <div className="container mx-auto ">
           <div className="flex items-center justify-start h-16">
             <img
@@ -242,36 +242,6 @@ function NavBar() {
           </div>
         )}
       </nav>
-      
-
-     {/* Hero section */}
-     <div className='bg-gradient-to-r from-orange-50 to-orange-100 overflow-hidden min-h-screen flex items-center'>
-      <div className='container mx-auto px-6 py-16 lg:px-16 md:py-24'>
-        <div className='grid md:grid-cols-2 gap-12 items-center'>
-          <div className='space-y-6 text-center md:text-left'>
-        <h1 className='text-4xl md:text-6xl poppins-bold text-orange-800 leading-tight'>
-          Traditional Indian <br /> Handicrafts & ethnics
-        </h1>
-        <p className='text-lg text-gray-600 max-w-md mx-auto'>
-          Discover the rich heritage of India through our curated collection of Handcrafted treasures,Traditional artwork and Ethnic design.
-        </p>
-        <button className='bg-orange-600 text-white px-8 py-3 rounded-full hover:bg-orange-700 transition-colors text-lg font-semibold shadow-lg'> Explore Collection</button>
-        </div>
-        <div className='flex justify-center'>
-          <img
-          src={Herosection}
-          alt="Handicrafts Display"
-          className='w-full rounded-lg  object-cover'>
-          
-          </img>
-          
-        </div>
-
-       </div>
-
-      </div>
-     </div>
-
     </div>
   );
 }
