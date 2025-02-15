@@ -126,10 +126,8 @@ function Home() {
         reviews: 156,
         image: top7,
       },
-
     ]
 
-    
   return (
     <div className='overflow-hidden'>
       {/* Hero Section */}
@@ -152,7 +150,6 @@ function Home() {
             <div className='flex justify-center'>
               <img src={Herosection} alt="Handicrafts Display" className='w-full rounded-lg object-cover' />
             </div>
-
           </div>
         </div>
       </div>
@@ -190,19 +187,22 @@ function Home() {
 
       {/*Deals Section*/}
 
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-gradient-to-r from-orange-50 to-orange-100">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
             Today's Best Deals For You!
           </h2>
           <div
             ref={dealsRef}
-            className="flex overflow-x-auto scrollbar-hide cursor-grab space-x-6 pb-8"
+            className="flex overflow-x-auto scrollbar-hide cursor-grab space-x-6 pb-8 no-scrollbar"
             onMouseDown={handleMouseDown}
             onMouseMove={handleMouseMove}
             onMouseUp={handleMouseUp}
             onMouseLeave={handleMouseLeave}
-            style={{ scrollBehavior: isDragging ? 'auto' : 'smooth' }}
+            style={{ scrollBehavior: isDragging ? 'auto' : 'smooth',
+              overflow: 'hidden',
+              cursor: isDragging ? 'grabbing' : 'grab',
+             }}
           >
             {topDeals.map((deal) => (
               <div
@@ -239,7 +239,7 @@ function Home() {
                     <span className="text-sm text-gray-600 ml-2">({deal.reviews})</span>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className="text-2xl font-bold text-gray-900">${deal.price.toFixed(2)}</span>
+                    <span className="text-2xl font-bold text-gray-900">{deal.price.toFixed(2)}</span>
                     <button className="px-4 py-2 bg-orange-600 text-white rounded-full hover:bg-orange-700 transition-colors">
                       Add to Cart
                     </button>
@@ -248,8 +248,10 @@ function Home() {
               </div>
             ))}
           </div>
+         
+          
           {/* Scroll Progress Bar */}
-          <div className="w-full h-1 bg-gray-200 rounded-full mt-4">
+          <div className="w-full h-1 bg-gray-200 rounded-full mt-6">
             <div
               className="h-full bg-orange-600 rounded-full transition-all duration-300"
               style={{

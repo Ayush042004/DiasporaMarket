@@ -51,8 +51,8 @@ function NavBar() {
       </div>
 
       {/* Main Navbar */}
-      <nav className="  relative shadow-md">
-        <div className="container mx-auto ">
+      <nav className="relative shadow-md">
+        <div className="container mx-auto px-4">
           <div className="flex items-center justify-start h-16">
             <img
             src={logo}
@@ -133,7 +133,7 @@ function NavBar() {
             </div>
 
             {/* Search Bar */}
-            <div className="hidden md:flex items-center flex-grow mx-4">
+            <div className="hidden md:flex items-center flex-1 max-w-md  mx-4">
               <div className="relative w-full max-w-lg">
                 <input
                   type="text"
